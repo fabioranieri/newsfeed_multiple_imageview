@@ -3,9 +3,12 @@ import 'package:newsfeed_multiple_imageview/src/smart_image.dart';
 
 class MultipleImageView extends StatelessWidget {
   final List<String> imageUrls;
+  final Function(String val)? onLongTap;
+
   const MultipleImageView({
     Key? key,
     required this.imageUrls,
+    this.onLongTap
   }) : super(key: key);
 
   @override
@@ -30,7 +33,7 @@ class MultipleImageView extends StatelessWidget {
         return _threeImageView();
 
       case 4:
-        return _foureImageView();
+        return _fourImageView();
 
       default:
         return _multipleImageView();
@@ -47,6 +50,7 @@ class MultipleImageView extends StatelessWidget {
             imageUrls.first,
             fit: BoxFit.cover,
             isPost: true,
+            onLongTap: onLongTap,
           ),
         ),
       ),
@@ -66,6 +70,7 @@ class MultipleImageView extends StatelessWidget {
             imageUrls.first,
             fit: BoxFit.cover,
             isPost: true,
+            onLongTap: onLongTap,
           ),
         ),
       ),
@@ -81,6 +86,7 @@ class MultipleImageView extends StatelessWidget {
             imageUrls.last,
             fit: BoxFit.cover,
             isPost: true,
+            onLongTap: onLongTap,
           ),
         ),
       )
@@ -100,6 +106,7 @@ class MultipleImageView extends StatelessWidget {
             imageUrls[0],
             fit: BoxFit.cover,
             isPost: true,
+            onLongTap: onLongTap,
           ),
         ),
       ),
@@ -121,6 +128,7 @@ class MultipleImageView extends StatelessWidget {
                   imageUrls[1],
                   fit: BoxFit.cover,
                   isPost: true,
+                  onLongTap: onLongTap,
                 ),
               ),
             ),
@@ -135,6 +143,7 @@ class MultipleImageView extends StatelessWidget {
                   imageUrls[2],
                   fit: BoxFit.cover,
                   isPost: true,
+                  onLongTap: onLongTap,
                 ),
               ),
             ),
@@ -144,7 +153,7 @@ class MultipleImageView extends StatelessWidget {
     ];
   }
 
-  List<Widget> _foureImageView() {
+  List<Widget> _fourImageView() {
     return [
       Expanded(
         flex: 2,
@@ -157,6 +166,7 @@ class MultipleImageView extends StatelessWidget {
             imageUrls[0],
             fit: BoxFit.cover,
             isPost: true,
+            onLongTap: onLongTap,
           ),
         ),
       ),
@@ -178,6 +188,7 @@ class MultipleImageView extends StatelessWidget {
                   imageUrls[1],
                   fit: BoxFit.cover,
                   isPost: true,
+                  onLongTap: onLongTap,
                 ),
               ),
             ),
@@ -189,6 +200,7 @@ class MultipleImageView extends StatelessWidget {
                   imageUrls[2],
                   fit: BoxFit.cover,
                   isPost: true,
+                  onLongTap: onLongTap,
                 ),
               ),
             ),
@@ -203,6 +215,7 @@ class MultipleImageView extends StatelessWidget {
                   imageUrls[3],
                   fit: BoxFit.cover,
                   isPost: true,
+                  onLongTap: onLongTap,
                 ),
               ),
             ),
@@ -225,6 +238,7 @@ class MultipleImageView extends StatelessWidget {
             imageUrls[0],
             fit: BoxFit.cover,
             isPost: true,
+            onLongTap: onLongTap,
           ),
         ),
       ),
@@ -246,6 +260,7 @@ class MultipleImageView extends StatelessWidget {
                   imageUrls[1],
                   fit: BoxFit.cover,
                   isPost: true,
+                  onLongTap: onLongTap,
                 ),
               ),
             ),
@@ -257,6 +272,7 @@ class MultipleImageView extends StatelessWidget {
                   imageUrls[2],
                   fit: BoxFit.cover,
                   isPost: true,
+                  onLongTap: onLongTap,
                 ),
               ),
             ),
@@ -275,6 +291,7 @@ class MultipleImageView extends StatelessWidget {
                       imageUrls[3],
                       fit: BoxFit.cover,
                       isPost: true,
+                      onLongTap: onLongTap,
                     ),
                   ),
                   Positioned.fill(

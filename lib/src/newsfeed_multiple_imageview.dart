@@ -13,6 +13,8 @@ class NewsfeedMultipleImageView extends StatelessWidget {
   final double marginTop;
   final double marginRight;
   final double marginBottom;
+  //Add function to remove image on longTap
+  final Function(String val)? onLongTap;
 
   const NewsfeedMultipleImageView({
     Key? key,
@@ -21,6 +23,7 @@ class NewsfeedMultipleImageView extends StatelessWidget {
     this.marginRight = 0,
     this.marginBottom = 0,
     required this.imageUrls,
+    this.onLongTap
   }) : super(key: key);
 
   @override
@@ -36,18 +39,22 @@ class NewsfeedMultipleImageView extends StatelessWidget {
           marginBottom,
         ),
         child: GestureDetector(
-          child: MultipleImageView(imageUrls: imageUrls),
+          child: MultipleImageView(imageUrls: imageUrls, onLongTap:  onLongTap),
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
               builder: (context) => ImageViewer(imageUrls: imageUrls),
             ),
           ),
+          /*onLongPress: () {
+            _showDeletePhotoDialog(context, imageUrls);
+          },*/
         ),
       ),
     );
   }
 }
+
 
 class ImageViewer extends StatelessWidget {
   final List<String> imageUrls;
